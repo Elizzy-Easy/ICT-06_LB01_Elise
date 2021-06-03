@@ -66,8 +66,8 @@
       <div class="control">
         <input
           class="input"
-          type="int"
-          placeholder="Good, bad, average..."
+          type="number" name="num" min="1" max="10"
+          placeholder="Enter a number between 1 and 10."
           v-model="rating"
         />
       </div>
@@ -111,7 +111,7 @@
 
 
     <div class="control">
-      <button class="button is-success" @click="updateProduct">Update my opinion</button>
+      <button class="button is-success" @click="updateSong">Update my opinion</button>
     </div>
   </div>
 </template>
@@ -121,7 +121,7 @@
 import axios from "axios";
  
 export default {
-  name: "EditProduct",
+  name: "EditSong",
   data() {
     return {
       author: "",
@@ -132,18 +132,18 @@ export default {
       rating: "",
       songComment: "",
       remarkPositive: "",
-      remarkNegativ: "",
+      remarkNegative: "",
     };
   },
   created: function () {
-    this.getProductById();
+    this.getSongById();
   },
   methods: {
-    // Get Product By Id
-    async getProductById() {
+    // Get Song By Id
+    async getSongById() {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products/${this.$route.params.id}`
+          `http://localhost:5000/songs/${this.$route.params.id}`
         );
         this.author = response.data.author;
         this.songTitle = response.data.songTitle;
@@ -154,7 +154,7 @@ export default {
         this.rating = response.data.rating;
         this.songComment = response.data.songComment;
         this.remarkPositive = response.data.remarkPositive;
-        this.remarkNegativ = response.data.remarkNegativ;
+        this.remarkNegative = response.data.remarkNegative;
 
 
       } catch (err) {
@@ -162,11 +162,11 @@ export default {
       }
     },
  
-    // Update product
-    async updateProduct() {
+    // Update Song
+    async updateSong() {
       try {
         await axios.put(
-          `http://localhost:5000/products/${this.$route.params.id}`,
+          `http://localhost:5000/songs/${this.$route.params.id}`,
           {
             author: this.author,
             songTitle: this.songTitle,

@@ -1,26 +1,26 @@
 // import express
 import express from "express";
 
-// import function from controller
-import { showProducts, showProductById, createProduct, updateProduct, deleteProduct } from "../controllers/product.js";
+// import function from controller (OK)
+import { showSongs, showSongById, createSong, updateSong, deleteSong } from "../controllers/product.js";
 
 // init express router
 const router = express.Router();
 
-// Get All Product
-router.get('/products', showProducts);
+// Get All Song
+router.get('/songs', showSongs);
 
-// Get Single Product
-router.get('/products/:id', showProductById);
+// Get Single Song
+router.get('/songs/:id', showSongById);
 
-// Create New Product
-router.post('/products', createProduct);
+// Create New Song
+router.post('/songs', createSong);
 
-// Update Product
-router.put('/products/:id', updateProduct);
+// Update Song
+router.put('/songs/:id', updateSong);
 
-// Delete Product
-router.delete('/products/:id', deleteProduct);
+// Delete Song
+router.delete('/songs/:id', deleteSong);
 
 // export default router
 export default router;

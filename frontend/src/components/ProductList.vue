@@ -1,32 +1,34 @@
 <template>
   <div>
     <router-link :to="{ name: 'Create' }" class="button is-success mt-5"
-      >Add New</router-link
-    >
-
+      >Add a new opinion</router-link>
     <div>
     <article class="col-6 " v-for="item in items" :key="item.songId">
           <p>{{ item.author }}</p>
-          <p>{{ item.songTitle }}</p>
-          <p>{{ item.artistName }}</p>
-          <p>{{ item.albumName }}</p>
-          <p>{{ item.releaseDate }}</p>
-          <p>{{ item.rating }}</p>
-          <p>{{ item.songComment }}</p>
-          <p>{{ item.remarkPositive }}</p>
-          <p>{{ item.remarkNegative }}</p>
+          <p class="bigtitle">{{ item.songTitle }}</p>
+          <span class="artist">{{ item.artistName }}</span>
+          <hr>
+          <p>From the album {{ item.albumName }} | Released in {{ item.releaseDate }}</p>
+          
+          <p>{{ item.rating }} ☆</p>
+          <p class="comment">"{{ item.songComment }}"</p>
+          <p>+ {{ item.remarkPositive }}</p>
+          <p>- {{ item.remarkNegative }}</p>
+          <div class="horizontalLine">&nbsp;</div>
+          <div class="largeSpace">&nbsp;</div>
           <p class="has-text-centered">
             <router-link
               :to="{ name: 'Edit', params: { id: item.songId } }"
-              class="button is-info is-small"
-              >Edit</router-link
+              class="editButton"
+              ><span>Edit opinion</span></router-link
             >
             <a
-              class="button is-danger is-small"
-              @click="deleteProduct(item.songId)"
-              >Delete</a></p>
-              
+              class="deleteButton"
+              @click="deleteSong(item.songId)"
+              ><span>Delete opinion</span></a></p>
+              <div class="largeSpace">&nbsp;</div>
       </article>
+      <div class="clear">&nbsp;</div> 
 </div>
   </div>
 </template>
@@ -43,25 +45,25 @@ export default {
   },
  
   created() {
-    this.getProducts();
+    this.getSongs();
   },
  
   methods: {
-    // Get All Products
-    async getProducts() {
+    // Get All Songs
+    async getSongs() {
       try {
-        const response = await axios.get("http://localhost:5000/products");
+        const response = await axios.get("http://localhost:5000/songs");
         this.items = response.data;
       } catch (err) {
         console.log(err);
       }
     },
  
-    // Delete Product
-    async deleteProduct(id) {
+    // Delete Song
+    async deleteSong(id) {
       try {
-        await axios.delete(`http://localhost:5000/products/${id}`);
-        this.getProducts();
+        await axios.delete(`http://localhost:5000/songs/${id}`);
+        this.getSongs();
       } catch (err) {
         console.log(err);
       }

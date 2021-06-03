@@ -1,8 +1,8 @@
 // import connection
 import db from "../config/database.js";
  
-// Get All Products
-export const getProducts = (result) => {
+// Get All Songs
+export const getSongs = (result) => {
     db.query("SELECT * FROM song", (err, results) => {             
         if(err) {
             console.log(err);
@@ -13,9 +13,9 @@ export const getProducts = (result) => {
     });   
 }
  
-// Get Single Product
-export const getProductById = (id, result) => {
-    db.query("SELECT * FROM song WHERE product_id = ?", [id], (err, results) => {             
+// Get Single Song
+export const getSongById = (id, result) => {
+    db.query("SELECT * FROM song WHERE songId = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -25,8 +25,8 @@ export const getProductById = (id, result) => {
     });   
 }
  
-// Insert Product to Database
-export const insertProduct = (data, result) => {
+// Insert Song to Database
+export const insertSong = (data, result) => {
     db.query("INSERT INTO song SET ?", [data], (err, results) => {             
         if(err) {
             console.log(err);
@@ -37,9 +37,9 @@ export const insertProduct = (data, result) => {
     });   
 }
  
-// Update Product to Database
-export const updateProductById = (data, id, result) => {
-    db.query("UPDATE song SET author = ?, songTitle = ?, artistName = ?, albumName = ?, releaseDate = ?, rating = ?, songComment = ?, remarkPositive = ?, remarkNegative = ? WHERE product_id = ?", [data.author, data.songTitle, data.artistName, data.albumName, data.releaseDate, data.rating, data.songComment, data.remarkPositive, data.remarkNegative, id,], (err, results) => {             
+// Update Song to Database
+export const updateSongById = (data, id, result) => {
+    db.query("UPDATE song SET author = ?, songTitle = ?, artistName = ?, albumName = ?, releaseDate = ?, rating = ?, songComment = ?, remarkPositive = ?, remarkNegative = ? WHERE songId = ?", [data.author, data.songTitle, data.artistName, data.albumName, data.releaseDate, data.rating, data.songComment, data.remarkPositive, data.remarkNegative, id,], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -49,9 +49,9 @@ export const updateProductById = (data, id, result) => {
     });   
 }
  
-// Delete Product to Database
-export const deleteProductById = (id, result) => {
-    db.query("DELETE FROM song WHERE product_id = ?", [id], (err, results) => {             
+// Delete Song to Database
+export const deleteSongById = (id, result) => {
+    db.query("DELETE FROM song WHERE songId = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);

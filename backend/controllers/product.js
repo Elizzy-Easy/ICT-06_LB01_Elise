@@ -1,9 +1,9 @@
-// Import function from Product Model
-import { getProducts, getProductById, insertProduct, updateProductById, deleteProductById } from "../models/productModel.js";
+// Import function from Song Model (OK-ALL)
+import { getSongs, getSongById, insertSong, updateSongById, deleteSongById } from "../models/productModel.js";
  
-// Get All Products
-export const showProducts = (req, res) => {
-    getProducts((err, results) => {
+// Get All Songs
+export const showSongs = (req, res) => {
+    getSongs((err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -12,9 +12,9 @@ export const showProducts = (req, res) => {
     });
 }
  
-// Get Single Product 
-export const showProductById = (req, res) => {
-    getProductById(req.params.id, (err, results) => {
+// Get Single Song 
+export const showSongById = (req, res) => {
+    getSongById(req.params.id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -23,10 +23,10 @@ export const showProductById = (req, res) => {
     });
 }
  
-// Create New Product
-export const createProduct = (req, res) => {
+// Create New Song
+export const createSong = (req, res) => {
     const data = req.body;
-    insertProduct(data, (err, results) => {
+    insertSong(data, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -35,11 +35,11 @@ export const createProduct = (req, res) => {
     });
 }
  
-// Update Product
-export const updateProduct = (req, res) => {
+// Update Song
+export const updateSong = (req, res) => {
     const data  = req.body;
     const id    = req.params.id;
-    updateProductById(data, id, (err, results) => {
+    updateSongById(data, id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -48,10 +48,10 @@ export const updateProduct = (req, res) => {
     });
 }
  
-// Delete Product
-export const deleteProduct = (req, res) => {
+// Delete Song
+export const deleteSong = (req, res) => {
     const id = req.params.id;
-    deleteProductById(id, (err, results) => {
+    deleteSongById(id, (err, results) => {
         if (err){
             res.send(err);
         }else{
