@@ -26,20 +26,18 @@ body {
         background-color: #ffffff;
         padding: 10px;     
 }
-    /*Scrollbar*/
     ::-webkit-scrollbar {
       width: 12px;
     }
     ::-webkit-scrollbar-thumb {
-      background: #AA0713;
+      background: #00b0a6;
       border-radius: 20px;
     }
-    
     ::-webkit-scrollbar-button {
-      background-color: #000000;
+      background-color: #00253d;
     }
     ::-webkit-scrollbar-track {
-      background-color: #4B4B4B;
+      background-color: #4d4d4d;
     }
     header {
       width: 100%;
@@ -47,56 +45,33 @@ body {
       box-shadow: 0px 3px 20px #000000;
       height: 7em;
       margin: 0;
-      padding: 10px 5px;
-      position: sticky;
+    }   
+    nav{
+        padding: 27px 0 0 0;
     }
-    .navbarList {
-      width: 66.66%;
+nav ul {
       float: right;
     }
-    nav ul { /*Navigation*/
-      float: right;
-      padding: 0 2em 0 0;
-      height: 5em;
+    nav ul li {
+        padding: 0 0.75em 0 0.75em;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.25em;
+        position: relative;
     }
-    nav ul li { /*Auflistung innerhalb Navigation*/
-      padding: 5px 0 0 0;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.75em;
-      position: relative;
-    }
-    
-    nav ul li a { /*Verlinkung Navigation*/
-      color: #3c3c3b;
-      text-decoration: none;
+    nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
         font-size: 1.25em;
     }
-    
     nav ul li a:visited {
         color: #ffffff;
     }
-    
-    nav ul li ul a:hover {
-      transition: 0.2s;
-      opacity: 50%;
-    }
-    nav ul li ul li{
-        transform: rotate(13deg);
-        transition: all 0.2s;
-        
-    }
-    nav ul li:hover ul {
-      display: block;
-        transition: all 0.2s;
-    }
-    
     main {
-        width: 80%;
+        width: 70%;
         margin-bottom: 10px;
         margin: 0px auto;
-        padding: 20px 50px 60px 50px;
         background-color: #000000;
     }
     article {
@@ -105,20 +80,8 @@ body {
             padding: 0.375em;
             color: #AFAFAF;
     }
-    aside {
-            background-color: #45474e;
-            border-radius: 10px;
-            margin: 10px auto;
-            float: right;
-            text-align: center;
-            width: 165px;
-    }
-    aside a {
-            color: #B6A4FF;
-            text-decoration: overline;
-    }
-    aside li {
-        text-align: left;
+    section {
+            padding: 5em 5em 7em 5em;
     }
     footer {
         background-color: #215375;
@@ -131,21 +94,18 @@ body {
         margin: 5px;
         text-decoration: none;
     }
-    /*links*/
     a {
-            color: #F46062;
+            color: #00b0a6;
             font-weight: bold;
             text-decoration: none;
     }
     a:visited {
-            color: #B00709;
+            color: #00b0a6;
     }
     a:hover {
-            color: #000;
+            color: #006e69;
             text-decoration: underline;
     }
-    /*text*/
-    
     h1 {
             margin: 10 px;
             padding: 0.75em;
@@ -155,26 +115,30 @@ body {
             text-align: center;
     }
     h2 {
-            color: #662650;
+            color: #ffffff;
             font-size: 2.5em;
-            margin: 0, 0.375em, 0.5em, 0.5em;
+            text-align: center;
+
     }
     h3 {
             font-size: 1.5em;
+            text-align: center;
     }
     h4 {
-            color: #AA0713;
+            color: #ffffff;
+            font-size: 1.25em;
+    }
+    p {
+            font-size: 1.2em;
+    }
+    li {
+            color: #ffffff;
     }
     img {
-            vertical-align: top;
-            margin: auto;
-            border-radius: 50px;
-    }
-    
-    mark{
-        background-color: #66DBFF;
-    }
-    
+        display: block;
+        margin: auto;
+        text-align: center;
+    }    
     button {
             background-color: #AA0713;
             font-size: 1em;
@@ -191,35 +155,7 @@ body {
     }
     button:active{
         border-color: #E10003;
-    }
-
-    .divider {
-            background-color: #efefef;
-            width: 100%;
-            float: right;
-    }
-    .header-text {
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 2em;
-    }
-    .header-text li {
-            text-decoration: none;
-            display: inline-block;
-    }
-    .card{
-        background-color: #000000;
-        border-radius: 10px;
-        width: 25%;
-    }
-    .card-header{
-        font-weight: bold;
-        font-size: 1.25em;
-        padding: 1em;
-        color: #00BABD
-    }
-    .card-content {
-        padding: 0 1em 1em 1em;
+        float: right;
     }
     .bigtitle{
         font-size: 5em;
@@ -231,10 +167,6 @@ body {
         color: #565656;
         text-align: right;
     }
-
-
-
-
     .field{
         margin: 50px 0;
     }
@@ -261,8 +193,6 @@ body {
         color: #f0f0f0;
         border-color: #466172;
     }
-
-
     .deleteButton {
         margin: 10px;
         background-color: #d8454c;
@@ -275,7 +205,7 @@ body {
         color: #ffffff;
         text-decoration: none;
     }
-    /*Der Code für den Button wurde von "https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1" entnommen, weil ich nicht mehr weiss, wie man Buttons animiert*/
+    /*Code by "https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1"*/
     .deleteButton span {
         display: inline-block;
         position: relative;
@@ -296,10 +226,6 @@ body {
         opacity: 1;
         right: 0;
       }
-
-
-
-
     .editButton {
         margin: 10px;
         background-color: #366499;
@@ -340,12 +266,17 @@ body {
     }
     /*grid*/
     .row {
-            margin: 20px 0;
-    }
+            margin: 20px;
+        }
     .rowDark {
         margin: 20px 0;
         background-color: #564780;
 }
+        .fullRow {
+        width: 100%;
+        background-color: #00253d;
+        padding: 20px 50px;
+        }
     .row:after {
             clear: both;
     }
@@ -396,48 +327,43 @@ body {
         height: 2px;
         background-color: #a3a3a3;
     }
-    
-    .hover-trigger {
-            background-color: #EF7643;
-    }
-    .hover-text {
-            width: 300px;
-            display: none;
-            position: absolute;
-            color: #232323;
-            background-color: #efefef;
-            transition-delay: 1.5s;
-    }
     .accordion {
-      background-color: #eee;
-      color: #444;
-      border: none;
-      cursor: pointer;
-      padding: 1em;
-      width: 50%;
-      text-align: center;
-      outline: none;
-        border-radius: 15px;
-      transition: 0.4s;
-    }
-    .accordion:hover{
-        background-color: #A0A0A0;
-    }
-    .panel{
-        padding: 15px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-    }
-    .accordion:after{
-        content: " ▻"
-    }
-    .active:after{
-        content: " ▽"
-    }
-    .round{
-        border-radius: 100px;
-    }
+        background-color: #00b0a6;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+      
+      .active, .accordion:hover {
+        background-color: #ccc;
+      }
+      
+      .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+      
+      .active:after {
+        content: "\2212";
+      }
+      
+      .panel {
+        padding: 20px;
+        background-color: #131020;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      
     .button span {
       position: relative;
       display: inline-block;
@@ -466,78 +392,61 @@ body {
       background: #00253d;
       color: #ffffff;
     }
-    
-    /* Slideshow container */
-    .slideshow-container {
-      position: relative;
-      margin: auto;
+    .headerImg {
+        margin: 0;
+        padding: 0 0 0 20px;
+        width: 20%;
     }
-    
-    /* Hide the images by default */
-    .mySlides {
-      display: none;
-    }
-    
-    /* Next & previous buttons */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      margin-top: -22px;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-    
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-    
-    /* The dots/bullets/indicators */
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    
-    .active, .dot:hover {
-      background-color: #717171;
-    }
-    
-    /* Fading animation */
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    
-    @-webkit-keyframes fade {
-      from {opacity: .0}
-      to {opacity: 1}
-    }
-    
-    @keyframes fade {
-      from {opacity: .0}
-      to {opacity: 1}
-    }
+   
+    .sliders {
+        display: none;
+        }
+
+.slideshow-container {
+        margin: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+
+
     /* Pagefading animation */
     .animate-in {
         -webkit-animation: fadeIn .5s ease-in;
@@ -559,9 +468,3 @@ body {
         from { opacity: 0; }
         to { opacity: 1; }
     }
-    @media (min-width: 1800px){
-        main {
-            width: 1500px;
-        }
-    }
-    

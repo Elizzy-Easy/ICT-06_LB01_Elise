@@ -106,6 +106,11 @@
       <div class="control">
         <button class="submitButton" @click="saveSong">Submit</button>
       </div>
+
+            <div>
+        <router-link :to="{ name: '' }" class="button is-success mt-5">Add a new opinion</router-link>
+      </div>
+
     </div>
     <!--END : Felder--> 
     

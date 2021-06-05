@@ -1,118 +1,113 @@
-<template>
-  <div>
-
-    <div class="field">
-      <label class="label">Your Name</label>
-      <div class="control">
-        <input
+<template> 
+  <!--START : Felder-->
+  <div class="rowDark">
+    <div class="col-6">
+      <div class="field">
+        <label class="label">Your Name</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="How do you want to be called?"
           v-model="author"
         />
+        </div>
       </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Song Title</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Song Title</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="Song Title"
           v-model="songTitle"
         />
+        </div>
       </div>
-    </div>
- 
-    <div class="field">
-      <label class="label">Artist Name</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Artist Name</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="Artist"
           v-model="artistName"
         />
+        </div>
       </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Album Name</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Album Name</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="From the album..."
           v-model="albumName"
         />
+        </div>
       </div>
-    </div>
- 
-    <div class="field">
-      <label class="label">Release Date</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Release Date</label>
+        <div class="control">
+          <input
           class="input"
           type="Date"
           placeholder="Released in..."
           v-model="releaseDate"
         />
+        </div>
       </div>
     </div>
-
-    <div class="field">
-      <label class="label">Rating</label>
-      <div class="control">
-        <input
+    <div class="col-6">
+      <div class="field">
+        <label class="label">Rating</label>
+        <div class="control">
+          <input
           class="input"
           type="number" name="num" min="1" max="10"
           placeholder="Enter a number between 1 and 10."
           v-model="rating"
         />
+        </div>
       </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Comment</label>
-      <div class="control">
-        <input
-          class="input"
+      <div class="fieldcomment">
+        <label class="label">Comment</label>
+        <div class="control">
+        <textarea rows="45" cols="45"
+          class="commentfield"
           type="text"
           placeholder="Tell us your thoughts"
           v-model="songComment"
         />
+        </div>
       </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Positive remark</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Positive remark</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="What do you like?"
           v-model="remarkPositive"
         />
+        </div>
       </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Negative remark</label>
-      <div class="control">
-        <input
+      <div class="field">
+        <label class="label">Negative remark</label>
+        <div class="control">
+          <input
           class="input"
           type="text"
           placeholder="What do you dislike?"
           v-model="remarkNegative"
         />
+        </div>
       </div>
     </div>
-
-
-    <div class="control">
-      <button class="button is-success" @click="updateSong">Update my opinion</button>
-    </div>
+    <!--END : Felder--> 
+        <div class="control">
+       <button class="button is-success" @click="updateSong">Update my opinion</button>
+       </div>
   </div>
 </template>
  

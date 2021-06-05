@@ -1,9 +1,19 @@
 <template>
-  <div>
-    <router-link :to="{ name: 'Create' }" class="button is-success mt-5"
-      >Add a new opinion</router-link>
+ 
+
     <div>
-    <article class="col-6 " v-for="item in items" :key="item.songId">
+    <div class="row" id="submit">
+
+    <div class="col-5"></div>
+    <div class="col-2"><router-link :to="{ name: 'Create' }" class="button is-success mt-5">Add a new opinion</router-link></div>
+    <div class="col-5"></div>
+
+      </div>
+    <div>
+
+
+
+      <article class="col-6 " v-for="item in items" :key="item.songId">
           <p>{{ item.author }}</p>
           <p class="bigtitle">{{ item.songTitle }}</p>
           <span class="artist">{{ item.artistName }}</span>
@@ -29,6 +39,7 @@
               <div class="largeSpace">&nbsp;</div>
       </article>
       <div class="clear">&nbsp;</div> 
+      <div id="opinions"></div>
 </div>
   </div>
 </template>
