@@ -1,25 +1,20 @@
 <template>
- 
-
     <div>
     <div class="row" id="submit">
-
-    <div class="col-5"></div>
-    <div class="col-2"><router-link :to="{ name: 'Create' }" class="button is-success mt-5">Add a new opinion</router-link></div>
-    <div class="col-5"></div>
+    <div class="col-4">&nbsp;</div>
+    <div class="col-4"><button><router-link :to="{ name: 'Create' }" class="submitButton"><span>Add a new opinion</span></router-link></button></div>
+    <div class="col-4">&nbsp;</div>
 
       </div>
     <div>
 
-
-
+      <div id="opinions">&nbsp;</div>
       <article class="col-6 " v-for="item in items" :key="item.songId">
-          <p>{{ item.author }}</p>
+          <p>{{ item.genre }}</p>
           <p class="bigtitle">{{ item.songTitle }}</p>
           <span class="artist">{{ item.artistName }}</span>
           <hr>
           <p>From the album {{ item.albumName }} | Released in {{ item.releaseDate }}</p>
-          
           <p>{{ item.rating }} ☆</p>
           <p class="comment">"{{ item.songComment }}"</p>
           <p>+ {{ item.remarkPositive }}</p>
@@ -40,7 +35,7 @@
       </article>
       <div class="clear">&nbsp;</div> 
       <div id="opinions"></div>
-</div>
+    </div>
   </div>
 </template>
 <script>
@@ -48,7 +43,7 @@
 import axios from "axios";
  
 export default {
-  name: "ProductList",
+  name: "SongList",
   data() {
     return {
       items: [],

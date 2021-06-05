@@ -2,7 +2,7 @@
 import express from "express";
 
 // import function from controller (OK)
-import { showSongs, showSongById, createSong, updateSong, deleteSong } from "../controllers/product.js";
+import { showSongs, showSongById, createSong, updateSong, deleteSong } from "../controllers/song.js";
 
 // init express router
 const router = express.Router();

@@ -83,16 +83,29 @@ nav ul {
     section {
             padding: 5em 5em 7em 5em;
     }
+    section:after {
+            clear: both;
+    }
     footer {
         background-color: #215375;
-        padding: 1em;
-        height: 5em;
+        color: #ffffff;
+        padding: 0.5em;
         text-decoration: none;
+        font-size: 1.25em;
+        text-align: center;
+
     }
-    footer a {
+    footer p a{
+        color: #ffffff;
         display: inline-block;
         margin: 5px;
         text-decoration: none;
+        font-size: 1.25em;
+        text-align: center;
+    }
+    footer p a:hover {
+            color: #ffffff;
+            text-decoration: none;
     }
     a {
             color: #00b0a6;
@@ -140,25 +153,26 @@ nav ul {
         text-align: center;
     }    
     button {
-            background-color: #AA0713;
+            background-color: #00b0a6;
+            margin: 10px;
+            padding: 10px 15px; 
+            border-radius: 30px;
             font-size: 1em;
-            color: #efefef;
-            font-family: 'Montserrat', sans-serif;
+            color: #000000;
             border: none;
+            cursor: pointer;
     }
-    button.tablinks{
-        padding: 10px;
-        border-radius: 10px;
-        background-color: #C50B0B;
-        margin: 5px;
-        font-weight: bold;
+    button a {
+            color: #000000;
     }
-    button:active{
-        border-color: #E10003;
-        float: right;
+    button a:hover {
+        text-decoration: none;
+    }
+    button a:visited {
+            color: #000000;
     }
     .bigtitle{
-        font-size: 5em;
+        font-size: 4.75em;
         font-weight: bold;
     }
     .artist{
@@ -193,6 +207,48 @@ nav ul {
         color: #f0f0f0;
         border-color: #466172;
     }
+    .submitButton {
+        margin: 10px;
+        background-color: #00b0a6;
+        color: #ffffff;
+        padding: 10px;  
+        border-radius: 30px;
+        cursor: pointer;
+    }   
+    .submitButton a {
+        margin: 10px;
+        background-color: #00b0a6;
+        color: #ffffff;
+        padding: 10px;  
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .submitButton:hover{
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .submitButton span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .submitButton span:after {
+        content: '»';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .submitButton:hover span {
+        padding-right: 25px;
+      }
+      .submitButton:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+
     .deleteButton {
         margin: 10px;
         background-color: #d8454c;
@@ -270,7 +326,7 @@ nav ul {
         }
     .rowDark {
         margin: 20px 0;
-        background-color: #564780;
+        background-color: #00253d;
 }
         .fullRow {
         width: 100%;
@@ -331,22 +387,26 @@ nav ul {
         background-color: #00b0a6;
         color: #ffffff;
         cursor: pointer;
-        padding: 18px;
+        padding: 20px;
         width: 100%;
         border: none;
         text-align: left;
         outline: none;
         font-size: 15px;
         transition: 0.4s;
+        font-size: 1.5em;
+      }
+      .accordion:active {
+        background-color: #004b6e;     
       }
       
       .active, .accordion:hover {
-        background-color: #ccc;
+        background-color: #006e69;
       }
       
       .accordion:after {
         content: '\002B';
-        color: #777;
+        color: #215375;
         font-weight: bold;
         float: right;
         margin-left: 5px;
@@ -358,6 +418,7 @@ nav ul {
       
       .panel {
         padding: 20px;
+        margin: 0 1.5em 0 1.5em;
         background-color: #131020;
         max-height: 0;
         overflow: hidden;

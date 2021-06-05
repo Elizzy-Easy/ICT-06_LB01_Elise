@@ -1,5 +1,5 @@
 // Import function from Song Model (OK-ALL)
-import { getSongs, getSongById, insertSong, updateSongById, deleteSongById } from "../models/productModel.js";
+import { getSongs, getSongById, insertSong, updateSongById, deleteSongById } from "../models/songModel.js";
  
 // Get All Songs
 export const showSongs = (req, res) => {

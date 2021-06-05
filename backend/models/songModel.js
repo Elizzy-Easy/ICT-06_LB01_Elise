@@ -39,7 +39,7 @@ export const insertSong = (data, result) => {
  
 // Update Song to Database
 export const updateSongById = (data, id, result) => {
-    db.query("UPDATE song SET author = ?, songTitle = ?, artistName = ?, albumName = ?, releaseDate = ?, rating = ?, songComment = ?, remarkPositive = ?, remarkNegative = ? WHERE songId = ?", [data.author, data.songTitle, data.artistName, data.albumName, data.releaseDate, data.rating, data.songComment, data.remarkPositive, data.remarkNegative, id,], (err, results) => {             
+    db.query("UPDATE song SET genre = ?, songTitle = ?, artistName = ?, albumName = ?, releaseDate = ?, rating = ?, songComment = ?, remarkPositive = ?, remarkNegative = ? WHERE songId = ?", [data.genre, data.songTitle, data.artistName, data.albumName, data.releaseDate, data.rating, data.songComment, data.remarkPositive, data.remarkNegative, id,], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);

@@ -2,17 +2,19 @@
   <!--START : Felder-->
   <div class="rowDark">
     <div class="col-6">
+
       <div class="field">
-        <label class="label">Your Name</label>
+        <label class="label">Genre</label>
         <div class="control">
           <input
           class="input"
           type="text"
-          placeholder="How do you want to be called?"
-          v-model="author"
+          placeholder="Pop, Metal, Electronica..."
+          v-model="genre"
         />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Song Title</label>
         <div class="control">
@@ -24,6 +26,7 @@
         />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Artist Name</label>
         <div class="control">
@@ -35,6 +38,7 @@
         />
         </div>
       </div>
+      
       <div class="field">
         <label class="label">Album Name</label>
         <div class="control">
@@ -58,6 +62,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-6">
       <div class="field">
         <label class="label">Rating</label>
@@ -70,6 +75,7 @@
         />
         </div>
       </div>
+
       <div class="fieldcomment">
         <label class="label">Comment</label>
         <div class="control">
@@ -81,6 +87,7 @@
         />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Positive remark</label>
         <div class="control">
@@ -92,6 +99,7 @@
         />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Negative remark</label>
         <div class="control">
@@ -103,77 +111,61 @@
         />
         </div>
       </div>
+
+      <div class="clear">&nbsp;</div>
+      <div style="float:right;">
+      <div class="control">
+        <button class="submitButton" @click="saveSong"><span>Submit</span></button>
+      </div>
+      </div>
+
+      <div style="float:left;">
+      <div class="control">
+        <button class="deleteButton"><a href="/"><span>Cancel</span></a></button>
+      </div>
+      </div>
+      <div class="clear">&nbsp;</div>
+      
     </div>
     <!--END : Felder--> 
-        <div class="control">
-       <button class="button is-success" @click="updateSong">Update my opinion</button>
-       </div>
+    
   </div>
 </template>
- 
 <script>
 // import axios
 import axios from "axios";
  
 export default {
-  name: "EditSong",
+  name: "AddSong",
   data() {
     return {
-      author: "",
-      songTitle: "",
-      artistName: "",
-      albumName: "",
-      releaseDate: "",
-      rating: "",
-      songComment: "",
-      remarkPositive: "",
-      remarkNegative: "",
+    genre: "",
+    songTitle: "",
+    artistName: "",
+    albumName: "",
+    releaseDate: "",
+    rating: "",
+    songComment: "",
+    remarkPositive: "",
+    remarkNegative: "",
     };
   },
-  created: function () {
-    this.getSongById();
-  },
   methods: {
-    // Get Song By Id
-    async getSongById() {
+    // Create New song
+    async saveSong() {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/songs/${this.$route.params.id}`
-        );
-        this.author = response.data.author;
-        this.songTitle = response.data.songTitle;
-        this.artistName = response.data.artistName;
-        this.albumName = response.data.albumName;
-        this.releaseDate = response.data.releaseDate;
-        this.songTitle = response.data.songTitle;
-        this.rating = response.data.rating;
-        this.songComment = response.data.songComment;
-        this.remarkPositive = response.data.remarkPositive;
-        this.remarkNegative = response.data.remarkNegative;
-
-
-      } catch (err) {
-        console.log(err);
-      }
-    },
- 
-    // Update Song
-    async updateSong() {
-      try {
-        await axios.put(
-          `http://localhost:5000/songs/${this.$route.params.id}`,
-          {
-            author: this.author,
-            songTitle: this.songTitle,
-            artistName: this.artistName,
-            albumName: this.albumName,
-            releaseDate: this.releaseDate,
-            rating: this.rating,
-            songComment: this.songComment,
-            remarkPositive: this.remarkPositive,
-            remarkNegative: this.remarkNegative,
-          }
-        );
+        await axios.post("http://localhost:5000/songs", {
+        genre: this.genre,
+        songTitle: this.songTitle,
+        artistName: this.artistName,
+        albumName: this.albumName,
+        releaseDate: this.releaseDate,
+        rating: this.rating,
+        songComment: this.songComment,
+        remarkPositive: this.remarkPositive,
+        remarkNegative: this.remarkNegative,
+        });
+        this.genre = "";
         this.songTitle = "";
         this.artistName = "";
         this.albumName = "";
@@ -190,6 +182,5 @@ export default {
   },
 };
 </script>
- 
 <style>
 </style>

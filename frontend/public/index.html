@@ -1,154 +1,142 @@
 <!DOCTYPE html>
 <html lang="EN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Home | Songpinion</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're really sorry but this page doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    
-    
-    <header>
-    <div class="col-2">
-      <a href="/"><img src="./assets/logo.png" alt="Header submit opinion" width="100%"></a>
-    </div>
-
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="./favicon.png">
+<title>Home | Songpinion</title>
+</head>
+<body>
+<noscript>
+<strong>We're really sorry but this page doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<header>
+  <div class="col-2"> <a href="/"><img src="./assets/logo.png" alt="Header submit opinion" width="100%"></a> </div>
   <div class="col-10">
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li> | </li>
-          <li><a href="#submit">Submit</a></li>
-          <li> | </li>
-          <li><a href="#opinions">Newest opinions</a></li>
-          <li> | </li>
-          <li><a href="#faq">FAQ</a></li>
-          <li> | </li>
-          <li><a href="#details">Project details</a></li>
-        </ul>
-      </nav>
-    </div>
-    </header>
-    <!--Slideshow-->
-    <div class="slideshow-container">
-      <div class="sliders fade">
-      <img src="./assets/header.jpg" alt="Header submit opinion" width="100%">
-      </div>
-      
-      <div class="sliders fade">
-        <img src="./assets/header-slide-2.jpg" alt="Header view opinions" width="100%">
-      </div>
-      
-      <div class="sliders fade">
-        <img src="./assets/header-slide-3.jpg" alt="Header" width="100%">
-      </div>
-      </div>
-
-      <br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li> | </li>
+        <li><a href="#submit">Submit</a></li>
+        <li> | </li>
+        <li><a href="#opinions">Songs &amp; Opinions</a></li>
+        <li> | </li>
+        <li><a href="#faq">FAQ</a></li>
+        <li> | </li>
+        <li><a href="#details">Project details</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="clear">&nbsp;</div>
+</header>
+<!--Slideshow-->
+<div class="slideshow-container">
+  <div class="sliders fade"> <a href="#submit"><img src="./assets/header.jpg" alt="Header submit opinion" width="100%"></a> </div>
+  <div class="sliders fade"> <a href="#opinions"><img src="./assets/header-slide-2.jpg" alt="Header view opinions" width="100%"></a> </div>
+  <div class="sliders fade"> <a href="#details"><img src="./assets/header-slide-3.jpg" alt="Header" width="100%"></a> </div>
 </div>
+<br>
+<div style="text-align:center"> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> </div>
+<div class="clear"></div>
+<main> 
+  <!--About Songpinion-->
+  <section>
+    <h2 id="about">What is Songpinion?</h2>
+    <div class="horizontalLine">&nbsp;</div>
+    <p>Can you relate at all? You find a new song and you really like it for some reason: 
+      Wether it's because of the lyrics, the instrumental or simply because of the vibe. You give your best, not to forget the aspects of why you like a 
+      song so much, but of course you end up forgetting it. <br>
+      <br>
+      So, what can you do? Write it down your thoughts! If you collect all your songs, you don't just 
+      create your own catalogue, you'll also be able to analyse, what exactly you like about music. What are you waiting for? Tell us about your music and 
+      your taste. </p>
+  </section>
+  <section class="fullRow">
+    <h2>Give your opinion with:</h2>
+    <div class="horizontalLine"></div>
+    <div class="col-3"></div>
+    <div class="col-2"> <img src="assets/star.png" alt="Star" width="50%"><br>
+      <h3>Star ratings</h3>
+    </div>
+    <div class="col-2"> <img src="assets/remark.png" alt="Positive and negative remarks" width="50%"><br>
+      <h3>Remarks</h3>
+    </div>
+    <div class="col-2"> <img src="assets/comment.png" alt="Comment" width="50%"><br>
+      <h3>Comments</h3>
+    </div>
+    <div class="col-3"></div>
     <div class="clear"></div>
-    <main>
-      <!--About Songpinion-->
-      <section>
-      <h2 id="about">What is Songpinion?</h2>
-      <div class="horizontalLine">&nbsp;</div>
-      <p>Can you relate at all? You find a new song and you really like it for some reason: 
-        Wether it's because of the lyrics, the instrumental or simply because of the vibe. You give your best, not to forget the aspects of why you like a 
-        song so much, but of course you end up forgetting it. <br><br>So, what can you do? Write it down your thoughts! If you collect all your songs, you don't just 
-        create your own catalogue, you'll also be able to analyse, what exactly you like about music. What are you waiting for? Tell us about your music and 
-        your taste.
-      </p>
-    </section>
+  </section>
+  <section class="row" style="height:100px;margin-top:3em;">
+    <h2>Build your own little catalogue of opinions</h2>
+    <div class="horizontalLine">&nbsp;</div>
+  </section>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <div class="clear">&nbsp;</div>
+  <section class="fullRow">
+    <h2 id="faq">FAQ</h2>
+    <div class="horizontalLine"></div>
+    <button class="accordion">Why can't I see my submitted song?</button>
+    <div class="panel">
+      <p>Watch out! <br>
+        In order to submit a song, you need to fill out each and every field, otherwise your song/opinion will not be seen as valid thus it won't be 
+        saved in our database. After submitting, your data will be lost if you didn't fill every field. We're currently working on a resolution. </p>
+    </div>
+    <button class="accordion">I edited a song but I can't see my changes!</button>
+    <div class="panel">
+      <p>You've encountered another bug!<br/>
+        If you want to edit something, you have to make sure, that every field is filled out. Unfortunately, while
+        editing your opinion, the field "Release Date" will become empty, even if you had filled it with a date before. So please enter while editing
+        the release date again. </p>
+    </div>
+    <button class="accordion">How do I submit an opinion about a song?</button>
+    <div class="panel">
+      <p>It's very simple: </p>
+      First, you need to know some facts about your song: its genre, title, artist, the album (if it's a single, simply enter
+      the song title with "Single" in the end) and of course the release date.<br>
+      <br>
+      Now you can talk about your opinion about the song: What do you like? How many stars would you give it? What do you dislike? Feel free to enter
+      every single thought that comes to your mind when thinking about the song. </div>
+    <div class="clear">&nbsp;</div>
+  </section>
+  <section>
+    <h2 id="details">Project details</h2>
+    <div class="horizontalLine"></div>
+    <p>Do you want to know how this project was realised? Then take a look at the concept and a little introduction video.</p>
+    <p>Git Repository: <a href="https://github.com/Elizzy-Easy/ICT-06_LB01_Elise.git">https://github.com/Elizzy-Easy/ICT-06_LB01_Elise.git</a></p>
+    <p>Concept</p>
+    <p>Introduction video</p>
+  </section>
+  <div class="clear">&nbsp;</div>
+</main>
+<footer>
+  <div class="row">
+    <div class="col-2">
+      <p><a href="#about">About Songpinion</a></p>
+    </div>
+    <div class="col-2">
+      <p><a href="#submit">Submit a song</a></p>
+    </div>
+    <div class="col-2">
+      <p><a href="#opinions">View songs</a></p>
+    </div>
+    <div class="col-2">
+      <p><a href="#faq">FAQ</a></p>
+    </div>
+    <div class="col-2">
+      <p><a href="#details">About this project</a></p>
+    </div>
+    <div class="col-2">
+      <p>Elise Slavici, 2021</p>
+    </div>
+    <div class="clear">&nbsp;</div>
+  </div>
+</footer>
 
-      <section class="fullRow">
-        <h2>Give your opinion with:</h2>
-        <div class="horizontalLine"></div>
-        <div class="col-3"></div>
-        <div class="col-2">
-          <img src="assets/star.png" alt="Star" width="50%"><br>
-          <h3>Star ratings</h3>
-        </div>
-        <div class="col-2">
-          <img src="assets/star.png" alt="Star" width="50%"><br>
-          <h3>Remarks</h3>
-         </div>
-         <div class="col-2">
-          <img src="assets/star.png" alt="Star" width="50%"><br>
-          <h3>Comments</h3>
-        </div>
-         <div class="col-3"></div>
-         <div class="clear"></div>
-      </section>
-
-      <section class="row" style="height:100px;margin-top:3em;">
-        <h2>Build your own little catalogue of opinions</h2>
-        <div class="horizontalLine">&nbsp;</div>
-      </section>
-      
-
-      <div id="app"></div>
-      <!-- built files will be auto injected -->
-
-      <section class="fullRow">
-        <h2>FAQ</h2>  
-      <div class="horizontalLine"></div>
-      <button class="accordion">Why can't I see my submitted song?</button>
-      <div class="panel">
-        <p>In order to submit a song, you need to fill out each and every field, otherwise your opinion will not be seen as valid thus it won't be 
-          saved in our database. After submitting, your data will be lost if you didn't fill every field. We're currently working on a resolution.
-        </p>
-      </div>
-
-      <button class="accordion">I edited an opinion but I can't see my changes!</button>
-      <div class="panel">
-        <p>You've encountered another bug! If you want to edit something, you have to make sure, that every field is filled out. Unfortunately, while
-          editing your opinion, the field "Release Date" will become empty, even if you had filled it with a date before. So please enter while editing
-          the release date again.
-        </p>
-      </div>
-
-      <button class="accordion">How do I submit an opinion about a song?</button>
-      <div class="panel">
-        <p>It's very simple: </p>
-          <ul>
-            <li>First, you need to know some facts about your song: its genre, title, artist, the album (if it's a single, simply enter
-          the song title with "Single" in the end) and of course the release date.</li>
-          <li>Now you can talk about your opinion about the song: What do you like? How many stars would you give it? What do you dislike? Feel free to enter
-          every single thought that comes to your mind when thinking about the song.</li>
-        </ul>
-      </div>
-    </section>
-
-          
-      <section>
-        <h2 id="details">Project details</h2>
-        <div class="horizontalLine"></div>
-        <p>Do you want to know how this project was realised? Then take a look at the concept and a little introduction video.</p>
-        <p>Git Repository: <a href="https://github.com/Elizzy-Easy/ICT-06_LB01_Elise.git">https://github.com/Elizzy-Easy/ICT-06_LB01_Elise.git</a></p>
-        <p>Concept</p>
-        <p>Introduction video</p>
-        
-      </section>
-      <div class="clear">&nbsp;</div>
-  </main>
-  
-
-    <footer>
-      <p>Test, does it work?</p>    
-      </footer>
-
-  <!--Code taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_symbol. I can't use Javascript-->
-  <script>
+<!--Code taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_symbol.--> 
+<script>
 var slideIndex = 0;
 showSlides();
 
@@ -185,8 +173,5 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 </script>
-  </body>
-  
-
-
+</body>
 </html>
